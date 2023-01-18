@@ -15,15 +15,11 @@ The database will contain:
   - A+
   - A-
   - B+
+  - B-
+  - AB+
+  - AB-
 
 ## Future Additions
 1. Patient Address
 1. Patient Gender
 1. Medical Record Number
-
-The variable name is 'x_variable'.
-
-'''
-def function(x):
-	print(x)
-'''
