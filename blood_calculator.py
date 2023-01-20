@@ -77,4 +77,8 @@ def total_analysis(total_int):
     answer = "High"
   return answer
 
+def total_output(total_value, total_analy):
+  print("The total cholesterol result of {} is considered {}".format(total_value, total_analy))
+  return
+
 interface()
