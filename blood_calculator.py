@@ -68,7 +68,7 @@ def LDL_output(LDL_value, LDL_analy):
 
 def total_driver():
   total_in = total_input()
-  total_analy = total_analysis(LDL_in)
+  total_analy = total_analysis(total_in)
   total_output(total_in, total_analy)
 
 def total_input():
