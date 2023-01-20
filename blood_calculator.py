@@ -68,4 +68,13 @@ def total_input():
   total_value = int(total_value)
   return total_value
 
+def total_analysis(total_int):
+  if total_int < 200:
+    answer = "Normal"
+  elif 200 <= total_int < 240:
+    answer = "Borderline High"
+  else:
+    answer = "High"
+  return answer
+
 interface()
