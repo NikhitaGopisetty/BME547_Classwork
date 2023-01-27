@@ -6,12 +6,6 @@ pediatric
              type of medical treatment or diagnostics.
 """
 
-def dose_driver():
-    diagnosis = diagnosis_input()
-    weight = weight_input()
-    dosage = dose_amount(diagnosis, weight)
-    dose_output(weight, dosage)
-
 def diagnosis_input():
     print("Day One Dosing Guidelines")
     print("")
@@ -28,6 +22,9 @@ def weight_input():
     print("Enter patient weight followed by units of kg or lb.")
     print("Examples:  65.3 lb      21.0 kg")
     weight_input = input("Enter weight: ")
+    return weight_input
+
+def weight_parse(weight_input):
     weight_data = weight_input.split(" ")
     weight = float(weight_data[0])
     units = weight_data[1]
@@ -49,4 +46,8 @@ def dose_output(weight, dosage):
 
 
 if __name__ == '__main__':
-    dose_driver()
+    diagnosis = diagnosis_input()
+    weight_input = weight_input()
+    weight = weight_parse(weight_input)
+    dosage = dose_amount(diagnosis, weight)
+    dose_output(weight, dosage)
