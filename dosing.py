@@ -8,6 +8,7 @@ pediatric
 
 def dose_driver():
     dose_interface()
+    dose_input()
 
 def dose_interface():
     print("Day One Dosing Guidelines")
@@ -17,6 +18,16 @@ def dose_interface():
     print("2 - Acute bacterial sinusitis")
     print("3 - Community-acquired pneumonia")
     print("4 - Pharyngitis/tonsilitis")
+
+def dose_input():
+    diagnosis = int(input("Enter a number: "))
+    print("PATIENT WEIGHT")
+    print("Enter patient weight followed by units of kg or lb.")
+    print("Examples:  65.3 lb      21.0 kg")
+    weight_input = input("Enter weight: ")
+    weight_data = weight_input.split(" ")
+    return weight_data
+
 
 def dose_amount():
     diagnosis = int(input("Enter a number: "))
@@ -39,4 +50,4 @@ def dose_amount():
 
 
 if __name__ == '__main__':
-    dose_amount()
+    dose_driver()
