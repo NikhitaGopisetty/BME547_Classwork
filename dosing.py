@@ -6,6 +6,9 @@ pediatric
              type of medical treatment or diagnostics.
 """
 
+def dose_driver():
+    dose_interface()
+
 def dose_interface():
     print("Day One Dosing Guidelines")
     print("")
