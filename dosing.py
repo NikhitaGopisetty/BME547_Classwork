@@ -26,20 +26,15 @@ def dose_input():
     print("Examples:  65.3 lb      21.0 kg")
     weight_input = input("Enter weight: ")
     weight_data = weight_input.split(" ")
-    return weight_data
-
-
-def dose_amount():
-    diagnosis = int(input("Enter a number: "))
-    print("PATIENT WEIGHT")
-    print("Enter patient weight followed by units of kg or lb.")
-    print("Examples:  65.3 lb      21.0 kg")
-    weight_input = input("Enter weight: ")
-    weight_data = weight_input.split(" ")
     weight = float(weight_data[0])
     units = weight_data[1]
     if units == "lb":
         weight = weight / 2.205
+    return weight_data
+
+
+def dose_amount():
+
     dosages_mg_per_kg = [30, 10, 10, 12]
     dosage_mg_per_kg = dosages_mg_per_kg[diagnosis-1]
     dosage_mg_first_day = weight * dosage_mg_per_kg
