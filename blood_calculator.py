@@ -1,22 +1,22 @@
 def interface():
-  print("Blood calculator")
-  keep_running = True
-  while keep_running:
-    print("Options:")
-    print("1 - HDL")
-    print("2 - LDL")
-    print("3 - Total Cholesterol")
-    print("9 - Quit")
-    choice = input("Select an option:")
-    if choice == "9":
-      keep_running = False
-    elif choice == "1":
-      HDL_driver()
-    elif choice == "2":
-      LDL_driver()
-    elif choice == "3":
-      total_driver()
-  print("Program ending")
+    print("Blood calculator")
+    keep_running = True
+    while keep_running:
+        print("Options:")
+        print("1 - HDL")
+        print("2 - LDL")
+        print("3 - Total Cholesterol")
+        print("9 - Quit")
+        choice = input("Select an option:")
+        if choice == "9":
+            keep_running = False
+        elif choice == "1":
+            HDL_driver()
+        elif choice == "2":
+            LDL_driver()
+        elif choice == "3":
+            total_driver()
+        print("Program ending")
 
 def HDL_driver():
   HDL_in = HDL_input()
@@ -89,4 +89,5 @@ def total_output(total_value, total_analy):
   print("The total cholesterol result of {} is considered {}".format(total_value, total_analy))
   return
 
-interface()
+if __name__ == "__main__":
+  interface()
