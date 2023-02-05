@@ -4,10 +4,10 @@
 def test_coordinates_function():
     from coordinates import coordinates_function
     # Arrange
-    coord_1 = (0, 0)
-    coord_2 = (10, 10)
+    x1, y1 = 0, 0
+    x2, y2 = 10, 10
     x = 5
     # Act
-    answer = coordinates_function(coord_1, coord_2, x)
+    answer = coordinates_function(x1, y1, x2, y2, x)
     # Assert
     assert answer == 5
