@@ -35,7 +35,8 @@ def print_database(db):
 
 def print_directory(db, room_numbers):
     for i, patient in enumerate(db):
-        print("Patient {} is in room {}".format(get_full_name(patient), room_numbers[i]))
+        print("Patient {} is in room {}".format
+              (get_full_name(patient), room_numbers[i]))
     for patient, rn in zip(db, room_numbers):
         print("Patient {} is in room {}".format
               (get_full_name(patient), rn))
