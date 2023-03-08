@@ -80,7 +80,8 @@ def add_test_driver(in_data):
     if validation is not True:
         return validation, 400
     # Do the work
-    add_test_to_db(db, in_data["id"], in_data["test_name"], in_data["test_result"])
+    add_test_to_db(db, in_data["id"], in_data["test_name"], 
+                   in_data["test_result"])
     # Return an answer
     return "Test successfully added", 200
 
@@ -100,4 +101,3 @@ def validate_test_data(in_data):
 
 if __name__ == '__main__':
     app.run()
-    
