@@ -45,9 +45,31 @@ def set_up_window():
         msg = check_and_upload_data(patient_name, patient_id, blood_letter, rh,
                                     donation_center)
         status_label.configure(text=msg)
+        id_entry.configure(state=tk.DISABLED)
 
     def cancel_btn_cmd():
         root.destroy()
+        # id_entry.configure(state=tk.NORMAL)
+    
+    def change_label_color():
+        current_color = top_label.cget('foreground')
+        if current_color == "":
+            color = 'white'
+        else:
+            color = current_color.string
+        if color == 'white':
+            new_color = 'red'
+        else:
+            new_color = 'white'
+        top_label.configure(foreground=new_color)
+        root.after(1000, change_label_color)
+
+    def shuffle_choices():
+        current_choices = list(donation_combobox.cget("values"))
+        import random
+        random.shuffle(current_choices)
+        donation_combobox.configure(values=current_choices)
+
 
     root = tk.Tk()
     root.title("Donor Database GUI")
@@ -107,9 +129,12 @@ def set_up_window():
     donation_combobox.grid(column=2, row=1)
     donation_combobox["values"] = ("Durham", "Apex", "Raleigh")
     donation_combobox.state(["readonly"])
+    donation_combobox.configure(postcommand=shuffle_choices)
 
     status_label = ttk.Label(root, text="")
     status_label.grid(row=7, column=0, columnspan=10)
+
+    root.after(3000, change_label_color)
 
     root.mainloop()
 
