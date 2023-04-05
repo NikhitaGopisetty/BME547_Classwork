@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
 import requests
+from PIL import Image, ImageTk
+from tkinter import filedialog
 
 
 def create_blood_string(blood_letter, rh):
@@ -69,6 +71,21 @@ def set_up_window():
         import random
         random.shuffle(current_choices)
         donation_combobox.configure(values=current_choices)
+    
+    def change_image_cmd():
+        print("Run change image")
+        filename = filedialog.askopenfilename(initialdir="Images")
+        if filename == "":
+            return
+        new_image = Image.open(filename)
+        current_size = new_image.size
+        max_size = 100
+        alpha = max_size / max(current_size)
+        new_image = new_image.resize((round(alpha*current_size[0]),
+                                      round(alpha*current_size[1])))
+        tk_image = ImageTk.PhotoImage(new_image)
+        image_label.configure(image=tk_image)
+        image_label.image = tk_image
 
 
     root = tk.Tk()
@@ -133,6 +150,17 @@ def set_up_window():
 
     status_label = ttk.Label(root, text="")
     status_label.grid(row=7, column=0, columnspan=10)
+
+    pil_image = Image.open("Images/blank_pic.jpeg")
+    pil_image = pil_image.resize((100, 100))
+    tk_image = ImageTk.PhotoImage(pil_image)
+    image_label = ttk.Label(root, image=tk_image)
+    image_label.grid(column=1, row=7)
+    image_label.image = tk_image
+
+    image_change_button = ttk.Button(root, text="Change Image",
+                                     command=change_image_cmd)
+    image_change_button.grid(column=2, row=7)
 
     root.after(3000, change_label_color)
 
