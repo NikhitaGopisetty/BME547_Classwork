@@ -52,7 +52,7 @@ def set_up_window():
     def cancel_btn_cmd():
         root.destroy()
         # id_entry.configure(state=tk.NORMAL)
-    
+
     def change_label_color():
         current_color = top_label.cget('foreground')
         if current_color == "":
@@ -71,7 +71,7 @@ def set_up_window():
         import random
         random.shuffle(current_choices)
         donation_combobox.configure(values=current_choices)
-    
+
     def change_image_cmd():
         print("Run change image")
         filename = filedialog.askopenfilename(initialdir="Images")
@@ -86,7 +86,6 @@ def set_up_window():
         tk_image = ImageTk.PhotoImage(new_image)
         image_label.configure(image=tk_image)
         image_label.image = tk_image
-
 
     root = tk.Tk()
     root.title("Donor Database GUI")
