@@ -61,12 +61,12 @@ def set_up_window():
         image_bytes = base64.b64decode(b64_string)
         with open(new_filename, "wb") as out_file:
             out_file.write(image_bytes)
-    
+
     root = tk.Tk()
     root.title("Image Encoding and Decoding")
 
     image_button = ttk.Button(root, text="Select Image",
-                                     command=main)
+                              command=main)
     image_button.grid(column=1, row=1)
 
     root.mainloop()
